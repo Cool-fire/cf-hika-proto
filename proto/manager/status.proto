@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "github.com/Cool-fire/hika/hika-session-manager/status";
+
+package status;
+
+service StatusService {
+  rpc SendWorkerStatus(StatusRequest) returns (StatusResponse) {};
+}
+
+message StatusRequest {
+  string podIndex = 1;
+  string curCmd = 2;
+  int64 progress = 3;
+}
+
+message StatusResponse {
+}
