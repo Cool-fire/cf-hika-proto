@@ -1,4 +1,4 @@
-module github.com/Cool-fire/hika/hika-proto
+module github.com/Cool-fire/cf-hika-proto
 
 go 1.19
 
