@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
+
 option go_package = "github.com/Cool-fire/hika-gen/manager/status";
 
 package status;
@@ -9,9 +11,24 @@ service StatusService {
 }
 
 message StatusRequest {
-  string podIndex = 1;
-  string curCmd = 2;
-  int64 progress = 3;
+  string pod_index = 1;
+  string cmd = 2;
+  google.protobuf.Timestamp timestamp = 3;
+  TaskProgress task_progress = 4;
+}
+
+message TaskProgress {
+  Status status = 1;
+  int64 progress = 2;
+}
+
+enum Status {
+  STARTED = 0;
+  RUNNING = 1;
+  FINISHED = 2;
+  FAILED = 3;
+  CANCELLED = 4;
+  UNKNOWN = 5;
 }
 
 message StatusResponse {
