@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/Cool-fire/hika/hika-session-manager/status";
+option go_package = "github.com/Cool-fire/hika-client/manager/status";
 
 package status;
 
